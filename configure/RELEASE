@@ -2,6 +2,14 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
+
+# Define the path to the synApps support directory and uncomment.
+SUPPORT=/APSshare/epics/synApps_6_2_1/support
+
+# Specify the standard synApps configuration.
+-include $(SUPPORT)/configure/RELEASE
+
+
 -include $(TOP)/../configure/RELEASE_LIBS_INCLUDE
 -include $(TOP)/RELEASE.local
 -include $(TOP)/configure/RELEASE.local
