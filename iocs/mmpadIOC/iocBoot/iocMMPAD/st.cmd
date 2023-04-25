@@ -1,4 +1,8 @@
 < envPaths
+
+epicsEnvSet("ENGINEER", "Engbretson")
+epicsEnvSet("LOCATION", "Sector-??")
+epicsEnvSet("GROUP", "Sector-??")
 errlogInit(20000)
 
 dbLoadDatabase("$(TOP)/dbd/mmpadDetectorApp.dbd")
@@ -33,15 +37,18 @@ asynOctetSetInputEos("camserver", 0, "\x18")
 asynOctetSetOutputEos("camserver", 0, "\n")
 
 mmpadDetectorConfig("$(PORT)", "camserver", $(XSIZE), $(YSIZE), 0, 0)
-dbLoadRecords("$(ADMMPAD)/db/mmpad.template","P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,CAMSERVER_PORT=camserver")
+dbLoadRecords("$(ADSYDORMMPAD)/db/mmpad.template","P=$(PREFIX),R=cam1:,PORT=$(PORT),ADDR=0,TIMEOUT=1,CAMSERVER_PORT=camserver")
 
 # Create a standard arrays plugin
 NDStdArraysConfigure("Image1", 5, 0, "$(PORT)", 0, 0)
 dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=image1:,PORT=Image1,ADDR=0,TIMEOUT=1,NDARRAY_PORT=$(PORT),TYPE=Int32,FTVL=LONG,NELEMENTS=94965")
 
 # Load all other plugins using commonPlugins.cmd
-< $(ADCORE)/iocBoot/commonPlugins.cmd
-set_requestfile_path("$(ADMMPAD)/mmpadApp/Db")
+#< $(ADCORE)/iocBoot/commonPlugins.cmd
+
+< ./commonPlugins.cmd
+
+set_requestfile_path("$(ADSYDORMMPAD)/mmpadApp/Db")
 
 # Uncomment to enable asynTrace on the driver port
 #asynSetTraceMask("$(PORT)",0,255)

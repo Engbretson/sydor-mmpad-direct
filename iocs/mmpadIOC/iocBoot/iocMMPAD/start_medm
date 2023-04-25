@@ -1,0 +1,8 @@
+#!/bin/bash
+HERE="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+
+#export EPICS_CA_AUTO_ADDR_LIST=NO
+#export EPICS_CA_ADDR_LIST=169.254.255.255
+
+${HERE}/start_display.sh MEDM 13PIL1: pilatusDetector x_y_z_z
+

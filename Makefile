@@ -2,6 +2,8 @@
 TOP = .
 include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) configure
+DIRS := $(DIRS) *Support
+DIRS := $(DIRS) zmq*
 DIRS := $(DIRS) mmpadApp
 ifeq ($(BUILD_IOCS), YES)
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocs))
