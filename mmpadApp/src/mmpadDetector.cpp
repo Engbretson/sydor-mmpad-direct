@@ -397,6 +397,8 @@ void mmpadDetector::makeMultipleFileFormat(const char *baseFileName)
  */
 asynStatus mmpadDetector::waitForFileToExist(const char *fileName, epicsTimeStamp *pStartTime, double timeout, NDArray *pImage)
 {
+printf("in wait for file to exist . . . \n");
+
     int fd=-1;
     int fileExists=0;
     struct stat statBuff;
