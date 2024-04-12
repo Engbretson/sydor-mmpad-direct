@@ -4,8 +4,8 @@
 
 
 # Define the path to the synApps support directory and uncomment.
-SUPPORT=/APSshare/epics/synApps_6_2_1/support
-ADSYDORMMPAD=/local/sydor-mmpad-direct
+SUPPORT=/APSshare/epics/synApps_6_3/support
+ADSYDORMMPAD=/net/s9dserv/xorApps/epics/synApps_6_3/ioc/sydor-mmpad-direct
 
 # Specify the standard synApps configuration.
 -include $(SUPPORT)/configure/RELEASE

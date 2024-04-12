@@ -1,5 +1,5 @@
 epicsEnvSet("IOC","iocMMPAD")
-epicsEnvSet("TOP","/local/sydor-mmpad-direct/iocs/mmpadIOC")
+epicsEnvSet("TOP","/net/s9dserv/xorApps/epics/synApps_6_3/ioc/sydor-mmpad-direct/iocs/mmpadIOC")
 epicsEnvSet("SUPPORT","/APSshare/epics/synApps_6_2_1/support")
 epicsEnvSet("ADSYDORMMPAD","/local/sydor-mmpad-direct")
 epicsEnvSet("EPICS_BASE","/APSshare/epics/base-7.0.4.1")
